@@ -2,7 +2,7 @@
 
 import os
 
-def filter_ones_and_zero(data_array, idx):
+def filter_ones_and_zeros(data_array, idx):
     data_one = []
     data_zero = []
     for j in range(len(data_array)):
@@ -16,14 +16,14 @@ def filter_ones_and_zero(data_array, idx):
 def oxygen(data_array, idx):
     if len(data_array) == 1:
         return data_array
-    data_row, data_one, data_zero = filter_ones_and_zero(data_array, idx)
+    data_row, data_one, data_zero = filter_ones_and_zeros(data_array, idx)
     data_row = data_one if len(data_one) >= len(data_zero) else data_zero
     return data_row
 
 def co2(data_array, idx):
     if len(data_array) == 1:
         return data_array
-    data_row, data_one, data_zero = filter_ones_and_zero(data_array, idx)
+    data_row, data_one, data_zero = filter_ones_and_zeros(data_array, idx)
     data_row = data_zero if len(data_one) >= len(data_zero) else data_one
     return data_row
 
